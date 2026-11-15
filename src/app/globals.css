@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #090909;
+  --foreground: #FAFAFA;
+}
+
+.light {
+  --background: #F0E6D8;
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090909;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E50924;
+}
+
+/* Selection color */
+::selection {
+  background: #E50924;
+  color: #FFFFFF;
+}
+
+/* Print Invoice Styles */
+@media print {
+  nav, footer, button, .no-print, [aria-label="Back to top"] {
+    display: none !important;
+  }
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .bg-brand-charcoal, .bg-brand-black {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border-color: #E5E5E5 !important;
+  }
+  .text-white, .text-neutral-300, .text-neutral-400 {
+    color: #171717 !important;
+  }
+  .text-brand-crimson {
+    color: #E50924 !important;
+  }
+}
